@@ -21,11 +21,11 @@ repositories {
 	mavenCentral()
 }
 
-dependencyManagement{
+/*dependencyManagement{
 	imports {
 		 mavenBom("org.testcontainers:testcontainers-bom:1.18.3")
 	}
-}
+}*/
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
