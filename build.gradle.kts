@@ -21,12 +21,21 @@ repositories {
 	mavenCentral()
 }
 
+dependencyManagement{
+	imports {
+		 mavenBom("org.testcontainers:testcontainers-bom:1.18.3")
+	}
+}
+
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	//implementation ("org.testcontainers:testcontainers-bom")
+	testImplementation ("org.testcontainers:mongodb")
+	testImplementation ("org.testcontainers:junit-jupiter")
 }
 
 tasks.withType<Test> {
