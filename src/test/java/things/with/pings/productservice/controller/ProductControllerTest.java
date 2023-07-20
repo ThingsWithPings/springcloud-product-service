@@ -39,4 +39,9 @@ class ProductControllerTest {
                 .price(BigDecimal.valueOf(100))
                 .build();
     }
+
+    @Test
+    void shouldReturnAllProducts() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/product")).andExpect(status().isOk());
+    }
 }
